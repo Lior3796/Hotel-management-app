@@ -1,0 +1,13 @@
+{
+    "jest": {
+        "verbose": true
+    },
+    "typeAcquisition": {
+        "include": ["jest"]
+    },
+    "globals": {
+        "js-jest": {
+            "isolatedModules": true
+        }
+    }
+}
