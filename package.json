@@ -1,9 +1,11 @@
 {
-	"name": "home-assignment-sap",
+	"name": "Hotel-management-app",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"start": "NODE_ENV=production node server",
 		"dev": "nodemon server.js"
 	},
