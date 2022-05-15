@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../../styles/style.css";
-
+import { Header } from "../header/Header";
+import { Footer } from "../footer/Footer";
 export const Register = () => {
     const [showModal, setShowModal] = useState(false);
     const userNameRef = useRef("");
@@ -18,16 +19,18 @@ export const Register = () => {
         const validForm = validateForm(e, userNameRef, userPasswordRef, userRoleRef);
         if (!validForm) {
             toast("One or more fields are not valid");
+            return;
         }
         const messageFromServer = await registerUser(validForm);
         toast(messageFromServer);
-        if (messageFromServer === "User created successfully") window.location = "http://localhost:3000/login";
+        messageFromServer === "User created successfully" && navigate({ pathname: "/Hotel-management-app/login" });
 
     }
 
 
     return (
         <>
+            <Header />
             <div tabindex="-1" aria-hidden="true" testId="register-container">
                 <div className="modal-container-form">
 
@@ -39,6 +42,7 @@ export const Register = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
             <ToastContainer />
 
         </>

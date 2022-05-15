@@ -3,16 +3,21 @@ import { CardsContainer } from '../components/features/cardsContainer/CardsConta
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from '../components/features/login/Login';
 
+
 export const AppRouter = () => {
     return (
-        <Router>
-            <>
-                <Routes>
-                    <Route path="/" exact element={<Register />} />
-                    <Route path="/login" exact element={<Login />} />
-                    <Route path="/homepage" exact element={<CardsContainer />} />
-                </Routes>
-            </>
-        </Router >
+        <>
+
+            <Routes>
+
+
+                <Route path="/Hotel-management-app" exact element={<Register />} />
+                <Route path="/Hotel-management-app/login" exact element={<Login />} />
+                <Route path="/Hotel-management-app/homepage" exact element={<CardsContainer />} />
+
+
+            </Routes>
+        </>
+
     )
 }

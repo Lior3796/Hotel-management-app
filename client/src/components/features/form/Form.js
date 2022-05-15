@@ -17,7 +17,7 @@ export const Form = ({ userNameRef, sendEmployeeForm, userPasswordRef, userRoleR
             </div>
             <div>
                 <label for="email" className="form-label">Your Password</label>
-                <input ref={userPasswordRef} className="form-input" placeholder="Enter your password..." required="" />
+                <input ref={userPasswordRef} className="form-input" placeholder="Enter your password..." type="password" required="" />
             </div>
             <label for="role" className="form-label">Select your role</label>
             <select ref={userRoleRef} id="role" className="form-input">

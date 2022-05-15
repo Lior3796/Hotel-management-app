@@ -4,9 +4,9 @@ import { getRooms, checkStatus, getFamilies } from '../../../services/service';
 import { Rooms } from '../../../context/rooms';
 import "../../styles/style.css";
 import { ToastContainer, toast } from 'react-toastify';
-
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Header } from '../header/Header';
+import { Footer } from '../footer/Footer';
 
 export const CardsContainer = () => {
     const { availablesRooms } = useContext(Rooms);
@@ -29,6 +29,7 @@ export const CardsContainer = () => {
 
 
         <Suspense fallback={(<div>Load...</div>)}>
+            <Header />
             <div className="grid grid-cols-3 grid-rows-1 gap-3 mt-4">
                 <span className="header-span">Availables rooms</span>
                 {availablesRooms?.map((room) => {
@@ -65,7 +66,7 @@ export const CardsContainer = () => {
             }
 
             <ToastContainer />
-
+            <Footer />
         </Suspense>
 
     )

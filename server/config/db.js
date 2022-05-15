@@ -5,7 +5,5 @@ const connectDB = () => {
         useNewUrlParser: true
     })
     console.log(`mongoDB connected`.cyan.underline.bold)
-
-
 }
 module.exports = connectDB;

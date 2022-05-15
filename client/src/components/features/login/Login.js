@@ -1,16 +1,18 @@
 import { useRef, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { validateForm } from '../../../utills/validateForm';
 import { loginUser } from '../../../services/service';
 import "../../styles/style.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { Header } from '../header/Header';
+import { Footer } from '../footer/Footer';
 
 export const Login = () => {
     const userNameRef = useRef("");
     const userPasswordRef = useRef("");
     const userRoleRef = useRef("");
-
+    const navigate = useNavigate("");
 
     const sendEmployeeForm = async (e) => {
         const validForm = validateForm(e, userNameRef, userPasswordRef, userRoleRef);
@@ -24,11 +26,12 @@ export const Login = () => {
             return;
         }
         toast(message, () => console.log("Toast"));
-        window.location = "http://localhost:3000/homepage";
+        navigate({ pathname: "/Hotel-management-app/homepage" });
     }
 
     return (
         <>
+            <Header />
 
             <div data-testId="login" tabindex="-1" aria-hidden="true" className="login-container
             
@@ -62,7 +65,7 @@ export const Login = () => {
                     </div>
                 </div>
             </div>
-
+            <Footer />
             <ToastContainer />
         </>
     )

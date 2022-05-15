@@ -4,10 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
-		"start": "NODE_ENV=production node server",
-		"dev": "nodemon server.js"
+		"client": "cd client && npm start",
+		"backend": "nodemon server.js",
+		"start": "concurrently \"npm run backend\" \"npm run client\""
 	},
 	"keywords": [],
 	"author": "",
@@ -15,6 +14,7 @@
 	"dependencies": {
 		"bcrypt": "^5.0.1",
 		"colors": "^1.4.0",
+		"concurrently": "^7.1.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.0",
 		"express": "^4.17.2",

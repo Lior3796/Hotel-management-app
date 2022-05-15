@@ -9,7 +9,7 @@ export const Footer = () => {
             </span>
             <ul className="social-links-list">
                 <li>
-                    <a href="#" className="social-links">Github</a>
+                    <a href="#" className="social-links"> Github</a>
                 </li>
                 <li>
                     <a href="#" className="social-links">Linkedin</a>

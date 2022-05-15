@@ -7,7 +7,7 @@ export const RoomsContext = ({ children }) => {
     const [availablesRooms, setAvailablesRooms] = useState([]);
     const [familesRooms, setFamilesRooms] = useState([]);
     const [couplesRooms, setCouplesRooms] = useState([]);
-    const [cookies, setCookies] = useState({ userRole: "", token: "" });
+    const [cookies, setCookies] = useState({ userRole: "", token: null });
 
     const setDataToFamilesRooms = async () => {
         const dataFromServer = await getFamilies();
