@@ -1,67 +1,11 @@
-# CardLatch Interview
+Welcome to Hotel Mangament system App!
 
-### Project description
+For start please follow this steps:
 
-This project is an important part of a big hotel management system,
+1. In the root directory type 'npm i' and then enter to install all the dependencies.
+2. Enter to the client folder by type the command 'cd client' in the console.
+3. Install all the dependencies, by type 'npm i' in the console.
+4. After that you can type in the console 'cd ../' for move to the root directory.
+5. Type 'npm start' for start the application.
 
-This project shows the hotel employees the status of the hotel, including rooms state and guests.
-
-### Instructions
-
-You need to create a Nodejs microservice that exposes several requested APIs, you will need to use spring data, spring security and twillo in this project,
-please make sure you cover your code with tests.
-
-The database you're going to use is mongo, The connection URI is
-
-> mongodb+srv://username:password@cluster0.ofaxg.mongodb.net/interview?retryWrites=true&w=majority
-
-### Collections
-
-- rooms:
-  - \_id
-  - number
-  - capacity
-- guests
-
-  - \_id
-  - name
-  - room
-
-- entries
-  - \_id
-  - room
-  - time
-
-### APIs
-
-> GET /rooms/availeable
-> <br>
-> return all availeable rooms ( rooms with no guests )
-> <br> > `reception, manager, owner allowed`
-
-> GET /guests/families
-> <br>
-> return all guests that stays in rooms with capacity greater then two
-> <br> > `no restrictions`
-
-> GET /rooms/couples
-> <br>
-> return all rooms with two guests stays in it so the manager can send bottles of wine as a gift
-> <br> > `manager, owner allowed`
-
-> POST /status
-> <br>
-> sends SMS to the owner of the hotel with cuurent percentage of taken rooms (use twillo)
-> <br> > `only owner allowed`
-
-### Security
-
-As you can see in the APIs section, you need three types of users:
-
-- reception
-- manager
-- owner
-
-<br>
-<br>
-<strong><em>good luck !</em></strong>
+Note: The server and the client going to work concurrently.
