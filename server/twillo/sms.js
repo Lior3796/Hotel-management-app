@@ -9,7 +9,7 @@ exports.sendMessage = (message) => {
             from: '+19788783518',
             to: '+972549303109'
         })
-        .then(message => console.log(message.sid))
+        .then(message => message)
         .catch(err => err)
 }
 
